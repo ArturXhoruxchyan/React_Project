@@ -1,0 +1,35 @@
+.animals{
+    width: 200px;
+    height: 200px;
+    background-image: url(./animals.jpg);
+    background-size: cover;
+}
+.animals1{
+    width: 200px;
+    height: 200px;
+    background-image: url(./animals1.jpg);
+    background-size: cover;
+}
+.animals2{
+    width: 200px;
+    height: 200px;
+    background-image: url(./animals2.jpg);
+    background-size: cover;
+}
+.masin{
+    display: flex;
+    justify-content: space-around;
+    margin-top: 50px;
+}
+.real{
+    text-align: center;
+}
+.a1:hover{
+    transition: 1s;
+    font-size: 11px;
+    color: black;
+    text-decoration: none;
+}
+.a1{
+    font-size: 12px;
+}
