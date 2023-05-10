@@ -5,23 +5,37 @@ export default function Home() {
     const [count, setCount] = useState(false)
     const [nkar, setNkar] = useState(false)
     const [real, setReal] = useState(false)
+    const data = [
+        {
+            class: "animals",
+            click: () => setCount((e) => !e),
+            activ: count,
+            id: 1,
+            page:"https://www.dartmoorzoo.org.uk/animals/"
+        },
+        {
+            class: "animals1",
+            click: () => setNkar((e) => !e),
+            activ: nkar,
+            id: 2,
+            page:"https://ideas.ted.com/how-do-animals-learn-how-to-be-well-animals-through-a-shared-culture/"
+        },
+        {
+            class: "animals2",
+            click: () => setReal((e) => !e),
+            activ: real,
+            id: 3,
+            page:"https://theconversation.com/the-threat-to-the-worlds-largest-wild-animals-is-much-greater-than-we-thought-64063"
+        },
+    ]
     return <div>
         <div className="masin">
-            <div className="as">
-                <div className="animals" onClick={() => setCount((e) => !e)}></div>
-                {count && <div className="real"><a className="a1" href="https://github.com/ArturXhoruxchyan/React_Project">Animals</a></div>}
+            {data?.map((e) => (
+                <div className="as" id={e.id}>
+                    <div className={e?.class} onClick={e?.click}></div>
+                   { e?.activ && <div className="real"><a className="a1" href={e?.page}>Animals</a></div>}
                 </div>
-        
-
-            <div className="as">
-                <div className="animals1" onClick={() => setNkar((e) => !e)}></div>
-                {nkar && <div className="real"><a className="a1" href="https://github.com/ArturXhoruxchyan/React_Project">Animalse</a></div>}
-         </div>
-
-         <div className="as">
-                <div className="animals2" onClick={() => setReal((e) => !e)}></div>
-                {real && <div className="real"><a className="a1" href="https://github.com/ArturXhoruxchyan/React_Project">Animalsee</a></div>}
-         </div>
+            ))}
+        </div>
     </div>
-    </div>
-    }
+}
